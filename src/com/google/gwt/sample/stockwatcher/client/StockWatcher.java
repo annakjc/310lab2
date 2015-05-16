@@ -171,9 +171,10 @@ private VerticalPanel mainPanel = new VerticalPanel();
 
 	    // Don't add the stock if it's already in the table.
 	    if (stocks.contains(symbol))
-	      return ;
+	      return true;
 
 	    addStock(symbol);
+	    return true;
 	  }
 
   	private void addStock(final String symbol) {
