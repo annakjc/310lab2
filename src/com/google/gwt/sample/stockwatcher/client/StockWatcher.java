@@ -156,7 +156,7 @@ private VerticalPanel mainPanel = new VerticalPanel();
 	     updateTable(prices);
 
   }
-  private void addStock() {
+  private boolean addStock() {
 	    final String symbol = newSymbolTextBox.getText().toUpperCase().trim();
 	    newSymbolTextBox.setFocus(true);
 
@@ -164,14 +164,14 @@ private VerticalPanel mainPanel = new VerticalPanel();
 	    if (!symbol.matches("^[0-9a-zA-Z\\.]{1,10}$")) {
 	      Window.alert("'" + symbol + "' is not a valid symbol.");
 	      newSymbolTextBox.selectAll();
-	      return;
+	      return true;
 	    }
 
 	    newSymbolTextBox.setText("");
 
 	    // Don't add the stock if it's already in the table.
 	    if (stocks.contains(symbol))
-	      return;
+	      return ;
 
 	    addStock(symbol);
 	  }
